@@ -175,4 +175,3 @@ This space is to record different API services in Microsoft Azure
         " New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4 "
     [3] VM1의 powershell에서 " ping VM2 ", VM2의 powershell에서 " ping VM1 "을 입력했을 때 잘되면 연결 성공  
     
-
