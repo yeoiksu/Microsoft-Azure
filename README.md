@@ -9,6 +9,10 @@ This space is to record different API services in Microsoft Azure
     5.1. [VM에서 Window환경 구축](#51-azure-virtual-machine에서-window-실행하기-관련-링크)<br>
     5.2. [VM에서 Ubuntu환경 구축](#52-azure-virtual-machine에서-ubuntu-실행하기-관련-링크)<br>
     5.3. [VM 확장 집합](#53-azure에서-가상머신-확장-집합-만들기-관련-링크)<br>
+6. [Virtual Network](#6-virtual-network-가상-네트워크)
+
+
+
 <hr>
 <!-- 5. [여기]() -->
 
