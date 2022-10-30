@@ -152,6 +152,8 @@ This space is to record different API services in Microsoft Azure
     [2] '설정' >> '확장 중' >> '인스턴스 수' 조절 후 "저장" 클릭 
     [3] '설정' >> '인스턴스'에 가서 
 
+<hr>
+
 ## 6. Virtual Network (가상 네트워크)
 #### 1) "Virtual Network" 만들기
     [1]  + 리소스 만들기
