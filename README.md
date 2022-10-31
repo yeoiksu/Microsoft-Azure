@@ -5,11 +5,12 @@ This space is to record different API services in Microsoft Azure
 2. [Face API](#2-face-api)
 3. [Custom Vision](#3-custom-vision)
 4. [OCR](#4-ocroptical-character-recognition)
-5. [Virtual Machine](#5-virtual-machine)<br>
-    5.1. [VM에서 Window환경 구축](#51-azure-virtual-machine에서-window-실행하기-관련-링크)<br>
-    5.2. [VM에서 Ubuntu환경 구축](#52-azure-virtual-machine에서-ubuntu-실행하기-관련-링크)<br>
-    5.3. [VM 확장 집합](#53-azure에서-가상머신-확장-집합-만들기-관련-링크)<br>
-6. [Virtual Network](#6-virtual-network-가상-네트워크)
+5. [Text Analytics](#5-text-analytics-텍스트-분석)
+6. [Virtual Machine](#5-virtual-machine)<br>
+    6.1. [VM에서 Window환경 구축](#61-azure-virtual-machine에서-window-실행하기-관련-링크)<br>
+    6.2. [VM에서 Ubuntu환경 구축](#62-azure-virtual-machine에서-ubuntu-실행하기-관련-링크)<br>
+    6.3. [VM 확장 집합](#63-azure에서-가상머신-확장-집합-만들기-관련-링크)<br>
+7. [Virtual Network](#7-virtual-network-가상-네트워크)
 
 
 
@@ -93,8 +94,31 @@ This space is to record different API services in Microsoft Azure
     <img src ='./Result/5_ocr_2.PNG' style='width: 400px; height: 280px'></img><br>
 <hr>
 
-## 5. Virtual Machine (가상 머신)
-### 5.1. Azure Virtual Machine에서 Window 실행하기 ([관련 링크](https://learn.microsoft.com/ko-kr/azure/virtual-machines/windows/quick-create-portal))
+## 5. Text Analytics (텍스트 분석)
+    [1]  + 리소스 만들기
+    [2] '텍스트 분석' 만들기 선택
+    [3] 추가 기능에서 '사용자 지정 질문 답변' 선택 
+        <기본 사항> : 이름, 지역 설정
+    [4] 검토 + 만들기
+### 텍스트 분석을 이용한 Demo List.
+1) 텍스트 분석 API를 이용해 'Seoul FAQ'에서 질문과 답변을 불러와 Chatbot을 만들기 [관련 링크](https://learn.microsoft.com/en-us/azure/cognitive-services/language-service/question-answering/tutorials/bot-service)
+
+-Seoul FAQ (https://korean.visitseoul.net/faq)에서 질문 & 답변을 Web Crawling 한 후 Azure Congitive Text Analytics API를 사용
+
+    [1] 생성 이후 리소스로 이동후 Language Studio에서 'Language Studio 시작하기' 선택 
+    [2] 성공 시 language.cognitive.azure.com/home으로 이동됨 >> 로그인 
+    [3] 'Create New' >> 'Custom question answering' 선택
+    [4] '한국어' 선택 >> 프로젝트 '이름' & '기본 메세지' 설정 >> 'Create Project'
+    [5] Manage Source >> Add Source >> URLs >> Web Crawling 할 홈페이지 ex) Seoul FAQ (https://korean.visitseoul.net/faq)에서 URL 추가
+    [6] 추가 이후 왼쪽 tab에서 Edit Knowledge base >> 'Test'를 클릭하여 chatbot으로 test 가능
+    [7] 왼쪽 tab에서 Deploy knowledge base >> 'Deploy' >> 성공 후 'Get precition URL'을 통해 url을 사용하여 python 코딩 가능
+
+#### Output. 
+<img src ='./Result/6_qna.PNG' style='height: 450px'></img><br>
+<hr>
+
+## 6. Virtual Machine (가상 머신)
+### 6.1. Azure Virtual Machine에서 Window 실행하기 ([관련 링크](https://learn.microsoft.com/ko-kr/azure/virtual-machines/windows/quick-create-portal))
 #### 1) "Virtual Machine" 만들기
     [1]  + 리소스 만들기
     [2] 'Virtual Machine' 만들기 선택
@@ -111,7 +135,7 @@ This space is to record different API services in Microsoft Azure
     [4] 가상 머신의 Window에서 powershell 실행 후 "Install-WindowsFeature -name Web-Server -IncludeManagementTools" 입력 : 기본 설치
     [5] chrome열고 "공용ip주소" 입력 시 사이트가 뜨면 성공
 
-### 5.2. Azure Virtual Machine에서 Ubuntu 실행하기 ([관련 링크](https://learn.microsoft.com/ko-kr/azure/virtual-machines/linux/quick-create-portal))
+### 6.2. Azure Virtual Machine에서 Ubuntu 실행하기 ([관련 링크](https://learn.microsoft.com/ko-kr/azure/virtual-machines/linux/quick-create-portal))
 #### 1) "Virtual Machine" 만들기
     [1] + 리소스 만들기
     [2] 'Virtual Machine' 만들기 선택
@@ -130,7 +154,7 @@ This space is to record different API services in Microsoft Azure
                 "sudo apt-get -y install nginx" 입력
     [4] chrome열고 "공용ip주소" 입력 시 사이트가 뜨면 성공
         
-### 5.3. Azure에서 가상머신 확장 집합 만들기 ([관련 링크](https://learn.microsoft.com/ko-kr/azure/virtual-machine-scale-sets/quick-create-portal))
+### 6.3. Azure에서 가상머신 확장 집합 만들기 ([관련 링크](https://learn.microsoft.com/ko-kr/azure/virtual-machine-scale-sets/quick-create-portal))
 #### 1) "Load Balance" (부하 분산 장치) 만들기
     [1]  + 리소스 만들기
     [2] 'Load Balance (부하 분산 장치)' 만들기 선택
@@ -154,7 +178,7 @@ This space is to record different API services in Microsoft Azure
 
 <hr>
 
-## 6. Virtual Network (가상 네트워크)
+## 7. Virtual Network (가상 네트워크)
 #### 1) "Virtual Network" 만들기
     [1]  + 리소스 만들기
     [2] '가상 네트워크' 만들기 선택
@@ -179,5 +203,7 @@ This space is to record different API services in Microsoft Azure
     [1] "원격 데스크톱 연결"을 사용하여 VM 1, VM 2 연결
     [2] VM 1, VM 2의 Powershell을 실행시킨 후 아래의 명령어 입력
         " New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4 "
-    [3] VM1의 powershell에서 " ping VM2 ", VM2의 powershell에서 " ping VM1 "을 입력했을 때 잘되면 연결 성공  
+    [3] VM1의 powershell에서 " ping VM2 ", VM2의 powershell에서 " ping VM1 "을 입력했을 때 잘되면 연결 성공 
+
+<hr> 
     
