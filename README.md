@@ -532,7 +532,6 @@ This space is to record different API services in Microsoft Azure
         > kubectl get service 
     [4] 외부 pod 연결하기
         > curl -X GET IP주소:80   # PORT 숫자: 80 
-
 #### 4) PVC 생성
 
 <hr>
