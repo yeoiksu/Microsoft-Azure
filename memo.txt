@@ -1,0 +1,33 @@
+10월 14일
+Azure 소개
+  클라우드 컴퓨팅
+  Azure
+Azure 실습
+  포탈 소개
+  Virtual Machine(VM) 생성 및 리소스 설명
+ 
+10월 21일
+클라우드를 구성하는 기술
+  데이터센터
+  가상화 
+  HyperV 소개
+  DR, 이중화, 고가용성
+Azure 서비스 소개 및 실습
+  Virtual Machine(VM) 소개
+  윈도우 VM 생성, IIS 구성  
+  우분투 VM 생성, Nginx 구성
+ 
+10월 28일
+지난주 복습, 실습(VM Win생성)
+ 
+Azure 서비스 소개 및 실습
+  VM Scale Set
+  Virtual Network(VNet)
+  Network Security Group
+  Load Balancer
+클라우드를 구성하는 기술
+  인터넷(네트워크)
+ 
+11월 4일
+Azure 서비스 소개 및 실습
+  App Service(WordPress, 정적 HTML, Python)
