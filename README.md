@@ -29,6 +29,11 @@ This space is to record different API services in Microsoft Azure
     2.2. [yaml 파일 생성](#22-yaml-파일-생성-pod-deployment-service-pvc)<br>
 <hr>
 
+### Appendix
+1. [AI-900 : Microsoft Azure AI Fundamentals](#1-ai-900-microsoft-azure-ai-fundamentals)
+2. [DP-900 : Microsoft Azure 데이터 기본 사항](#2-dp-900-microsoft-azure-데이터-기본-사항)
+
+
 # I. Azure Coginitive Service 
 ## 1. Computer Vision 
     [1]  + 리소스 만들기
@@ -535,4 +540,101 @@ This space is to record different API services in Microsoft Azure
 #### 4) PVC 생성
 
 <hr>
+
+# Appendix. Microsoft License
+## 1. AI 900: Microsoft Azure AI Fundamentals
+### 1.1. AI 소개
+- 인공지능 : 인간의 능력을 모방하는 소프트웨어
+- AI Cloud Platform:
+    1) Azure Machine Learning   : 기계 학습 클라우드 기반 플랫폼, Automated ML/Designer
+    2) Azure Cognitive Service
+    3) Azure Bot Service
+
+- AI의 원칙
+    1) 공정성           : 데이터의 편견, 편향
+    2) 신뢰성 & 안전성  : 데이터의 오류
+    3) 보안 & 개인 정보 : 노출, Privacy
+    4) 포괄성           : 시각장애인 -> 화면 X
+    5) 투명성           : 결과치의 신뢰도
+    6) 책임             : AI의 판단에 따른 책임
+
+### 1.2. 기계 학습 (Machine Learning)
+- Supervised Learning    : Classification(분류), Regression(예측), Feature & Label 제공
+- Unsupervised Learning  : Cluster, Dimensional Reduction, Feature만 제공, Pattern/구조 발견
+- Reinforcement Learning : Reward(보상) 제공, 인과관계 중요, 게임(알파고) & 로봇
+
+### 1.3. Computer Vision
+- Azure Cognitive Service를 사용: REST End point(URL), Key 필요
+- 이미지 분류, 개체 감지, Face 인식, OCR, Form Recognizer
+
+### 1.4. NLP
+- 텍스트 분석 & Entity(엔테티) 인식
+- 감정 분석
+- 음성 인식 & 합성
+- 기계 번역
+- 의미 체계적 언어 모델링: 의도(Intent)
+
+### 1.5. 대화용 AI
+- Azure Bot Service : 
+    Channel : Messenger (Facebook, Whatsapp, Telegram, Line, Teams) & Email & SMS  
+- QnA Maker Service : 
+    Data Source: Web, Text, Word, Excel, PDF
+
+## 2. DP 900: Microsoft Azure 데이터 기본 사항
+### 2.1. 데이터 개념
+- 데이터
+    1) 정형   : 행과 열, 표(테이블)                 -> Azure SQL DB
+    2) 반정형 : 일부구조 갖춤 ex) Json, 그래프 DB   -> Azure Cosmos DB
+    3) 비정형 : 오디오, 비디오, 바이너리            -> Azure Blob Storage
+
+- 데이터처리 시스템
+    1) 분석 시스템 : 원시데이터 캡처 -> 인사이트 도출
+                    수집 - 변환/처리 - 쿼리 - 시각화
+    2) 트랙잭션 시스템 : 대용량, 신속하게 액세스, OLTP(Online Transaction Processing)
+
+- 워크로드에 대한 설명
+    - 관계형 DB의 용도 : 트랜잭션 워크로드
+    - 시작 - 수정 - 커밋/롤백
+    - ACID (원자성, 일관성, 격리성, 내구성)
+
+- 일괄처리와 스트리밍
+    1) 일괄처리:
+        - 데이터를 버퍼링 한 다음 그룹으로 처리
+        - 대량의 데이터를 편리한 시간에 처리 (사용량 적은시간)     
+        - BUT 수집~결과 사이에 시간 지연 발생
+        - BUT 일괄 작업 중 오류 발생시 전체 프로세스 중단
+        - 복잡한 분석 수행을 위해 사용
+    2) 스트리밍:
+        - 데이터가 도착할 때마다 처리
+        - 변동을 실시간 추적, 게임에서 실시간 데이터 수집 등
+        - RTW/최근 수신 데이터 내의 데이터만 액세스 가능
+        - 소규모 일괄처리에 적합
+        - 대기시간 적음
+
+- 데이터 세계의 역할과 책임
+    1) DBA : 권한을 할당, 백업 복사본 저장, 오류 시 데이터 복원
+    2) Database Engineer : 데이터 작업, 정리 루틴 적용, 비즈니스 규칙 식별, 파이프라인, 데이터 고나련 자산 설계 및 구현
+    3) Data Analysis : 합리적 의사결정을 내릴 수 있도록 지원
+
+### 2.2. Azure에서 관계형 데이터 
+- 특성
+    1) 엔터티 컬렉션을 테이블로 모델링
+    2) 각 행은 엔터티의 단일 인스턴스를 나타냅니다.
+    3) PK : 기본키, 행을 고유하게 식별하는 열
+    4) FK : 외래키, 다른 테이블의 기본 키를 참조하거나 기본 키에 연결, 테이블 간의 관계를 관리
+    5) OLTP(온라인 트랜잭션 처리)
+
+- 구조
+    1) 테이블 세트로 구성
+    2) 인덱스와 뷰
+        1) 인덱스:
+            - 인덱스를 만들 때는 테이블의 열을 지정
+            - 일부 관계형 데이터베이스 관리 시스템은 ‘클러스터형 인덱스’를 지원
+            - 클러스터형 인덱스를 지원하는 데이터베이스 관리 시스템에서 테이블은 하나의 클러스터형 인덱스만 가질 수 있음.
+        2) 뷰
+            - 가상 테이블
+            - 기본 테이블의 지정된 행에 대한 창이 뷰
+            
+### 2.3. Azure에서 비관계형 데이터 
+### 2.4. Azure에서 최신 데이터 웨어하우스 분석 
 
