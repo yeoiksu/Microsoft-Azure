@@ -27,12 +27,12 @@ This space is to record different API services in Microsoft Azure
 2. [Kubernetes 사용하기](#2-kubernetes-사용하기)<br>
     2.1. [Minikube 다운받고 웹 통신하기](#21-Minikube-다운받고-웹-통신하기)<br>
     2.2. [yaml 파일 생성](#22-yaml-파일-생성-pod-deployment-service-pvc)<br>
-<hr>
 
 ### Appendix
 1. [AI-900 : Microsoft Azure AI Fundamentals](#1-ai-900-microsoft-azure-ai-fundamentals)
-2. [DP-900 : Microsoft Azure 데이터 기본 사항](#2-dp-900-microsoft-azure-데이터-기본-사항)
+2. [DP-900 : Microsoft Azure 데이터 기본 사항](#2-dp-900-microsoft-azure-데이터-기본-사항))
 
+<hr>
 
 # I. Azure Coginitive Service 
 ## 1. Computer Vision 
@@ -543,6 +543,7 @@ This space is to record different API services in Microsoft Azure
 
 # Appendix. Microsoft License
 ## 1. AI 900: Microsoft Azure AI Fundamentals
+- https://www.examtopics.com/exams/microsoft/ai-900/
 ### 1.1. AI 소개
 - 인공지능 : 인간의 능력을 모방하는 소프트웨어
 - AI Cloud Platform:
@@ -583,19 +584,23 @@ This space is to record different API services in Microsoft Azure
 ## 2. DP 900: Microsoft Azure 데이터 기본 사항
 ### 2.1. 데이터 개념
 - 데이터
-    1) 정형   : 행과 열, 표(테이블)                 -> Azure SQL DB
-    2) 반정형 : 일부구조 갖춤 ex) Json, 그래프 DB   -> Azure Cosmos DB
-    3) 비정형 : 오디오, 비디오, 바이너리            -> Azure Blob Storage
+    1) 구조화(정형) : 행과 열, 표(테이블), Database         -> Azure SQL DB
+    2) 반구조화(반정형) : 일부구조 갖춤 ex) Json, 그래프 DB -> Azure Cosmos DB
+    3) 비구조화(비정형) : 오디오, 비디오, 바이너리          -> Azure Blob Storage
 
 - 데이터처리 시스템
-    1) 분석 시스템 : 원시데이터 캡처 -> 인사이트 도출
+    1) 분석데이터 저장소시스템 : 원시데이터 캡처 -> 인사이트 도출
                     수집 - 변환/처리 - 쿼리 - 시각화
-    2) 트랙잭션 시스템 : 대용량, 신속하게 액세스, OLTP(Online Transaction Processing)
+    2) 트랙잭션(OLTP) : 대용량, 신속하게 액세스
 
 - 워크로드에 대한 설명
     - 관계형 DB의 용도 : 트랜잭션 워크로드
     - 시작 - 수정 - 커밋/롤백
-    - ACID (원자성, 일관성, 격리성, 내구성)
+    - ACID (원자성, 일관성, 격리, 영속성)
+    - 분석 워크로드
+        1) 요약(Summary)
+        2) 추세(Trend)
+        3) 비즈니스 정보 (BI) : Power BI
 
 - 일괄처리와 스트리밍
     1) 일괄처리:
@@ -612,9 +617,23 @@ This space is to record different API services in Microsoft Azure
         - 대기시간 적음
 
 - 데이터 세계의 역할과 책임
-    1) DBA : 권한을 할당, 백업 복사본 저장, 오류 시 데이터 복원
-    2) Database Engineer : 데이터 작업, 정리 루틴 적용, 비즈니스 규칙 식별, 파이프라인, 데이터 고나련 자산 설계 및 구현
-    3) Data Analysis : 합리적 의사결정을 내릴 수 있도록 지원
+    1) 데이터베이스 서버관리자 (DBA) : 데이터베이스 관리, 보안 구현, 백업, 사용자 엑세스, 성능 모니터링
+    2) 데이터 엔지니어 (Database Engineer) : 데이터 파이프라인 및 프로세스, 수집 스토리지, 분석용 데이터 준비, 분석 처리르 위한 데이터 준비
+    3) 데이터 분석가 (Data Analysis) : 데이터에 대한 인사이트 제공, 시각적 개체 보고 , 데이터 모델링, 시각화 및 분석을 위한 데이터 결합
+
+- 공통 도구
+    1) 데이터 베이스 관리자
+        - Azure Data Studio : Wndows, macOS, Linux
+        - SQL Server Management Studio : Windows, Execute plan
+        - Azure Portal / CLI : Data 서비스 관리 및 프로비전용 도구
+    2) 데이터 엔지니어링
+        - Azure Synapse Studio
+        - SQL Server Management Studio
+        - Azure Portal / CLI
+    3) 데이터 분석자
+        - Power BI Desktop
+        - Power BI Portal / Power BI Service
+        - Power BI 보고서 작성기
 
 ### 2.2. Azure에서 관계형 데이터 
 - 특성
@@ -636,5 +655,6 @@ This space is to record different API services in Microsoft Azure
             - 기본 테이블의 지정된 행에 대한 창이 뷰
             
 ### 2.3. Azure에서 비관계형 데이터 
+    
 ### 2.4. Azure에서 최신 데이터 웨어하우스 분석 
 
